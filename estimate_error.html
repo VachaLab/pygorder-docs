@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estimating error &mdash; gorder &#34;0.6.0-dev.2&#34; documentation</title>
+  <title>Estimating error &mdash; gorder &#34;1.2.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=97568a9e"></script>
+      <script src="_static/documentation_options.js?v=784e175d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -51,17 +51,14 @@
 <li class="toctree-l1"><a class="reference internal" href="leaflets.html">Order parameters for individual leaflets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ordermap.html">Maps of order parameters</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Estimating error</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.estimate_error.EstimateError"><code class="docutils literal notranslate"><span class="pre">EstimateError</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.estimate_error.EstimateError.n_blocks"><code class="docutils literal notranslate"><span class="pre">EstimateError.n_blocks</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.estimate_error.EstimateError.output_convergence"><code class="docutils literal notranslate"><span class="pre">EstimateError.output_convergence</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.estimate_error.EstimateError"><code class="docutils literal notranslate"><span class="pre">EstimateError</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="geometry.html">Order parameters for specific membrane region</a></li>
 <li class="toctree-l1"><a class="reference internal" href="membrane_normal.html">Specifying membrane normal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Accessing the results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Errors you can encounter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -92,33 +89,22 @@
 <span id="estimating-error"></span><h1>Estimating error<a class="headerlink" href="#module-gorder.estimate_error" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.estimate_error.EstimateError">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.estimate_error.</span></span><span class="sig-name descname"><span class="pre">EstimateError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_convergence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.estimate_error.EstimateError" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.estimate_error.</span></span><span class="sig-name descname"><span class="pre">EstimateError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_convergence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.estimate_error.EstimateError" title="Link to this definition"></a></dt>
 <dd><p>Parameters for estimating the error of the analysis.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.estimate_error.EstimateError.n_blocks">
-<span class="sig-name descname"><span class="pre">n_blocks</span></span><a class="headerlink" href="#gorder.estimate_error.EstimateError.n_blocks" title="Link to this definition"></a></dt>
-<dd><p>Number of blocks to divide the trajectory into for error estimation.
-Default is 5. It is recommended not to modify this value to artificially lower error estimates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_blocks</strong> (<em>int</em><em>, </em><em>default=5</em>) – Number of blocks to divide the trajectory for error estimation.
+Must be at least 2. It is recommended not to modify this value to
+artificially reduce error estimates.</p></li>
+<li><p><strong>output_convergence</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Filename for writing convergence data. If omitted, convergence analysis
+is still performed but results are not written into a file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If <cite>n_blocks</cite> is less than 2.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.estimate_error.EstimateError.output_convergence">
-<span class="sig-name descname"><span class="pre">output_convergence</span></span><a class="headerlink" href="#gorder.estimate_error.EstimateError.output_convergence" title="Link to this definition"></a></dt>
-<dd><p>Optional filename for writing convergence data.
-If error estimation is enabled, convergence analysis will be performed even if this option
-is not specified; the results just won’t be written to a file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>

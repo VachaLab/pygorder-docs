@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order parameters for specific membrane region &mdash; gorder &#34;0.6.0-dev.2&#34; documentation</title>
+  <title>Order parameters for specific membrane region &mdash; gorder &#34;1.2.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=97568a9e"></script>
+      <script src="_static/documentation_options.js?v=784e175d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -52,30 +52,15 @@
 <li class="toctree-l1"><a class="reference internal" href="ordermap.html">Maps of order parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estimate_error.html">Estimating error</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Order parameters for specific membrane region</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Cuboid"><code class="docutils literal notranslate"><span class="pre">Cuboid</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cuboid.xdim"><code class="docutils literal notranslate"><span class="pre">Cuboid.xdim</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cuboid.ydim"><code class="docutils literal notranslate"><span class="pre">Cuboid.ydim</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cuboid.zdim"><code class="docutils literal notranslate"><span class="pre">Cuboid.zdim</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cuboid.reference"><code class="docutils literal notranslate"><span class="pre">Cuboid.reference</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Cylinder"><code class="docutils literal notranslate"><span class="pre">Cylinder</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cylinder.radius"><code class="docutils literal notranslate"><span class="pre">Cylinder.radius</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cylinder.orientation"><code class="docutils literal notranslate"><span class="pre">Cylinder.orientation</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cylinder.span"><code class="docutils literal notranslate"><span class="pre">Cylinder.span</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Cylinder.reference"><code class="docutils literal notranslate"><span class="pre">Cylinder.reference</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Sphere"><code class="docutils literal notranslate"><span class="pre">Sphere</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Sphere.radius"><code class="docutils literal notranslate"><span class="pre">Sphere.radius</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.geometry.Sphere.reference"><code class="docutils literal notranslate"><span class="pre">Sphere.reference</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Cuboid"><code class="docutils literal notranslate"><span class="pre">Cuboid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Cylinder"><code class="docutils literal notranslate"><span class="pre">Cylinder</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Sphere"><code class="docutils literal notranslate"><span class="pre">Sphere</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="membrane_normal.html">Specifying membrane normal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Accessing the results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Errors you can encounter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -106,136 +91,57 @@
 <span id="order-parameters-for-specific-membrane-region"></span><h1>Order parameters for specific membrane region<a class="headerlink" href="#module-gorder.geometry" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.geometry.Cuboid">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cuboid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ydim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cuboid" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cuboid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ydim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cuboid" title="Link to this definition"></a></dt>
 <dd><p>Calculate order parameters inside a cuboid.</p>
-<p>Returns an error if any of the dimensions are invalid.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cuboid.xdim">
-<span class="sig-name descname"><span class="pre">xdim</span></span><a class="headerlink" href="#gorder.geometry.Cuboid.xdim" title="Link to this definition"></a></dt>
-<dd><p>Span of the cuboid along the x-axis. Defaults to infinite if not specified.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xdim</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Span of the cuboid along the x-axis [nm]. Defaults to infinite if not specified.</p></li>
+<li><p><strong>ydim</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Span of the cuboid along the y-axis [nm]. Defaults to infinite if not specified.</p></li>
+<li><p><strong>zdim</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Span of the cuboid along the z-axis [nm]. Defaults to infinite if not specified.</p></li>
+<li><p><strong>reference</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>,</em><em>str</em><em>]</em><em>]</em>) – Reference point for the cuboid position. Defaults to [0.0, 0.0, 0.0].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If any dimension is invalid.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cuboid.ydim">
-<span class="sig-name descname"><span class="pre">ydim</span></span><a class="headerlink" href="#gorder.geometry.Cuboid.ydim" title="Link to this definition"></a></dt>
-<dd><p>Span of the cuboid along the y-axis. Defaults to infinite if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cuboid.zdim">
-<span class="sig-name descname"><span class="pre">zdim</span></span><a class="headerlink" href="#gorder.geometry.Cuboid.zdim" title="Link to this definition"></a></dt>
-<dd><p>Span of the cuboid along the z-axis. Defaults to infinite if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cuboid.reference">
-<span class="sig-name descname"><span class="pre">reference</span></span><a class="headerlink" href="#gorder.geometry.Cuboid.reference" title="Link to this definition"></a></dt>
-<dd><p>Reference point relative to which the position of the cuboid is specified.
-Defaults to the origin of the simulation box ([0.0, 0.0, 0.0]) if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.geometry.Cylinder">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cylinder" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cylinder" title="Link to this definition"></a></dt>
 <dd><p>Calculate order parameters inside a cylinder.</p>
-<p>Returns an error if the radius is negative or the span is invalid.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cylinder.radius">
-<span class="sig-name descname"><span class="pre">radius</span></span><a class="headerlink" href="#gorder.geometry.Cylinder.radius" title="Link to this definition"></a></dt>
-<dd><p>Radius of the cylinder.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>float</em>) – Radius of the cylinder [nm].</p></li>
+<li><p><strong>orientation</strong> (<em>str</em>) – Orientation of the cylinder’s main axis. Expected values are x, y, or z.</p></li>
+<li><p><strong>span</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Span along the main axis [nm]. Defaults to infinite if not specified.</p></li>
+<li><p><strong>reference</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>,</em><em>str</em><em>]</em><em>]</em>) – Reference point for position and size. Defaults to [0.0, 0.0, 0.0].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If <cite>radius</cite> is not positive, <cite>span</cite> is invalid, or <cite>orientation</cite> is not recognized.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cylinder.orientation">
-<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#gorder.geometry.Cylinder.orientation" title="Link to this definition"></a></dt>
-<dd><p>Orientation of the main axis of the cylinder.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cylinder.span">
-<span class="sig-name descname"><span class="pre">span</span></span><a class="headerlink" href="#gorder.geometry.Cylinder.span" title="Link to this definition"></a></dt>
-<dd><p>Span of the cylinder along its main axis. Defaults to infinite if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Cylinder.reference">
-<span class="sig-name descname"><span class="pre">reference</span></span><a class="headerlink" href="#gorder.geometry.Cylinder.reference" title="Link to this definition"></a></dt>
-<dd><p>Reference point relative to which the position and size of the cylinder are specified.
-Defaults to the origin of the simulation box ([0.0, 0.0, 0.0]) if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.geometry.Sphere">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Sphere" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Sphere" title="Link to this definition"></a></dt>
 <dd><p>Calculate order parameters inside a sphere.</p>
-<p>Returns an error if the radius is negative.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Sphere.radius">
-<span class="sig-name descname"><span class="pre">radius</span></span><a class="headerlink" href="#gorder.geometry.Sphere.radius" title="Link to this definition"></a></dt>
-<dd><p>Radius of the sphere.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>float</em>) – Radius of the sphere [nm].</p></li>
+<li><p><strong>reference</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>,</em><em>str</em><em>]</em><em>]</em>) – Center of the sphere. Defaults to [0.0, 0.0, 0.0].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If <cite>radius</cite> is not positive.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.geometry.Sphere.reference">
-<span class="sig-name descname"><span class="pre">reference</span></span><a class="headerlink" href="#gorder.geometry.Sphere.reference" title="Link to this definition"></a></dt>
-<dd><p>Center of the sphere.
-Defaults to the origin of the simulation box ([0.0, 0.0, 0.0]) if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>

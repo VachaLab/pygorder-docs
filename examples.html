@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Specifying membrane normal &mdash; gorder &#34;1.2.0&#34; documentation</title>
+  <title>Examples &mdash; gorder &#34;1.2.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -20,8 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Accessing the results" href="results.html" />
-    <link rel="prev" title="Order parameters for specific membrane region" href="geometry.html" /> 
+    <link rel="prev" title="Errors you can encounter" href="exceptions.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,13 +51,10 @@
 <li class="toctree-l1"><a class="reference internal" href="ordermap.html">Maps of order parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estimate_error.html">Estimating error</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometry.html">Order parameters for specific membrane region</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Specifying membrane normal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.membrane_normal.DynamicNormal"><code class="docutils literal notranslate"><span class="pre">DynamicNormal</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="membrane_normal.html">Specifying membrane normal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Accessing the results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Errors you can encounter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a></li>
 </ul>
 
         </div>
@@ -75,9 +71,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Specifying membrane normal</li>
+      <li class="breadcrumb-item active">Examples</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/membrane_normal.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -85,41 +81,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-gorder.membrane_normal">
-<span id="specifying-membrane-normal"></span><h1>Specifying membrane normal<a class="headerlink" href="#module-gorder.membrane_normal" title="Link to this heading"></a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="gorder.membrane_normal.DynamicNormal">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.membrane_normal.</span></span><span class="sig-name descname"><span class="pre">DynamicNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.membrane_normal.DynamicNormal" title="Link to this definition"></a></dt>
-<dd><p>Request a dynamic local membrane normal calculation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>heads</strong> (<em>str</em>) – Selection query specifying reference atoms representing lipid headgroups
-(typically phosphorus atoms or phosphate beads). Must be exactly one
-atom/bead per lipid molecule.</p></li>
-<li><p><strong>radius</strong> (<em>float</em>) – Radius of the sphere used to select nearby lipids for membrane normal
-estimation in nm. Recommended value is half the membrane thickness.
-Must be greater than 0. The default value is 2.0 (nm).</p></li>
-<li><p><strong>collect</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>bool</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=False</em>) – Determines whether dynamic membrane normals are saved and exported.
-By default (<cite>False</cite>), normals are not saved.
-If <cite>True</cite>, normals are saved internally and accessible via the Python API, but not written to a file.
-If a string is provided, normals are saved and written to the specified output file.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If <cite>radius</cite> is not positive.</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
+<p>For examples of how to use <code class="docutils literal notranslate"><span class="pre">gorder</span></code> as a Python package, see the <a class="reference external" href="https://github.com/Ladme/gorder/tree/main/examples/python">gorder repository</a>.</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="geometry.html" class="btn btn-neutral float-left" title="Order parameters for specific membrane region" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="results.html" class="btn btn-neutral float-right" title="Accessing the results" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="exceptions.html" class="btn btn-neutral float-left" title="Errors you can encounter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

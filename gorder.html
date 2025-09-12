@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Performing the analysis &mdash; gorder &#34;0.6.0-dev.2&#34; documentation</title>
+  <title>Performing the analysis &mdash; gorder &#34;1.2.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=97568a9e"></script>
+      <script src="_static/documentation_options.js?v=784e175d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -48,41 +48,8 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Performing the analysis</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gorder.Analysis"><code class="docutils literal notranslate"><span class="pre">Analysis</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.structure"><code class="docutils literal notranslate"><span class="pre">Analysis.structure</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.trajectory"><code class="docutils literal notranslate"><span class="pre">Analysis.trajectory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.analysis_type"><code class="docutils literal notranslate"><span class="pre">Analysis.analysis_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.bonds"><code class="docutils literal notranslate"><span class="pre">Analysis.bonds</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.index"><code class="docutils literal notranslate"><span class="pre">Analysis.index</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.output_yaml"><code class="docutils literal notranslate"><span class="pre">Analysis.output_yaml</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.output_tab"><code class="docutils literal notranslate"><span class="pre">Analysis.output_tab</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.output_xvg"><code class="docutils literal notranslate"><span class="pre">Analysis.output_xvg</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.output_csv"><code class="docutils literal notranslate"><span class="pre">Analysis.output_csv</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.membrane_normal"><code class="docutils literal notranslate"><span class="pre">Analysis.membrane_normal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.begin"><code class="docutils literal notranslate"><span class="pre">Analysis.begin</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.end"><code class="docutils literal notranslate"><span class="pre">Analysis.end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.step"><code class="docutils literal notranslate"><span class="pre">Analysis.step</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.min_samples"><code class="docutils literal notranslate"><span class="pre">Analysis.min_samples</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.n_threads"><code class="docutils literal notranslate"><span class="pre">Analysis.n_threads</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.leaflets"><code class="docutils literal notranslate"><span class="pre">Analysis.leaflets</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.ordermap"><code class="docutils literal notranslate"><span class="pre">Analysis.ordermap</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.estimate_error"><code class="docutils literal notranslate"><span class="pre">Analysis.estimate_error</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.geometry"><code class="docutils literal notranslate"><span class="pre">Analysis.geometry</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.handle_pbc"><code class="docutils literal notranslate"><span class="pre">Analysis.handle_pbc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.silent"><code class="docutils literal notranslate"><span class="pre">Analysis.silent</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.overwrite"><code class="docutils literal notranslate"><span class="pre">Analysis.overwrite</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.from_file"><code class="docutils literal notranslate"><span class="pre">Analysis.from_file()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.Analysis.run"><code class="docutils literal notranslate"><span class="pre">Analysis.run()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.AtomType"><code class="docutils literal notranslate"><span class="pre">AtomType</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.AtomType.atom_name"><code class="docutils literal notranslate"><span class="pre">AtomType.atom_name()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.AtomType.relative_index"><code class="docutils literal notranslate"><span class="pre">AtomType.relative_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.AtomType.residue_name"><code class="docutils literal notranslate"><span class="pre">AtomType.residue_name()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.Frequency"><code class="docutils literal notranslate"><span class="pre">Frequency</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Frequency.every"><code class="docutils literal notranslate"><span class="pre">Frequency.every()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.Frequency.once"><code class="docutils literal notranslate"><span class="pre">Frequency.once()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -95,6 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="membrane_normal.html">Specifying membrane normal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Accessing the results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Errors you can encounter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -125,306 +93,75 @@
 <span id="performing-the-analysis"></span><h1>Performing the analysis<a class="headerlink" href="#module-gorder" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.Analysis">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.</span></span><span class="sig-name descname"><span class="pre">Analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trajectory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bonds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_yaml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_tab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_xvg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_csv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">membrane_normal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leaflets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordermap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_pbc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.Analysis" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.</span></span><span class="sig-name descname"><span class="pre">Analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trajectory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bonds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_yaml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_tab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_xvg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_csv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">membrane_normal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leaflets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordermap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_pbc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.Analysis" title="Link to this definition"></a></dt>
 <dd><p>Class describing all the parameters of the analysis.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.structure">
-<span class="sig-name descname"><span class="pre">structure</span></span><a class="headerlink" href="#gorder.Analysis.structure" title="Link to this definition"></a></dt>
-<dd><p>Path to a TPR (recommended), PDB, GRO, or PQR file containing the structure and topology of the system.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.trajectory">
-<span class="sig-name descname"><span class="pre">trajectory</span></span><a class="headerlink" href="#gorder.Analysis.trajectory" title="Link to this definition"></a></dt>
-<dd><p>Path to an XTC (recommended), TRR, or GRO trajectory file to be analyzed.
-You can provide multiple XTC or TRR trajectories and these will be seamlessly concatenated.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[str, list[str]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.analysis_type">
-<span class="sig-name descname"><span class="pre">analysis_type</span></span><a class="headerlink" href="#gorder.Analysis.analysis_type" title="Link to this definition"></a></dt>
-<dd><p>Type of analysis to perform (e.g., AAOrder or CGOrder).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[<a class="reference internal" href="analysis_types.html#gorder.analysis_types.AAOrder" title="gorder.analysis_types.AAOrder">AAOrder</a>, <a class="reference internal" href="analysis_types.html#gorder.analysis_types.CGOrder" title="gorder.analysis_types.CGOrder">CGOrder</a>, <a class="reference internal" href="analysis_types.html#gorder.analysis_types.UAOrder" title="gorder.analysis_types.UAOrder">UAOrder</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.bonds">
-<span class="sig-name descname"><span class="pre">bonds</span></span><a class="headerlink" href="#gorder.Analysis.bonds" title="Link to this definition"></a></dt>
-<dd><p>Path to a file containing bonding information. If specified, this overrides bonds from the structure file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.index">
-<span class="sig-name descname"><span class="pre">index</span></span><a class="headerlink" href="#gorder.Analysis.index" title="Link to this definition"></a></dt>
-<dd><p>Path to an NDX file specifying groups in the system.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.output_yaml">
-<span class="sig-name descname"><span class="pre">output_yaml</span></span><a class="headerlink" href="#gorder.Analysis.output_yaml" title="Link to this definition"></a></dt>
-<dd><p>Path to an output YAML file containing the full analysis results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.output_tab">
-<span class="sig-name descname"><span class="pre">output_tab</span></span><a class="headerlink" href="#gorder.Analysis.output_tab" title="Link to this definition"></a></dt>
-<dd><p>Path to an output TABLE file with human-readable results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.output_xvg">
-<span class="sig-name descname"><span class="pre">output_xvg</span></span><a class="headerlink" href="#gorder.Analysis.output_xvg" title="Link to this definition"></a></dt>
-<dd><p>Filename pattern for output XVG files storing results. Each molecule type gets a separate file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.output_csv">
-<span class="sig-name descname"><span class="pre">output_csv</span></span><a class="headerlink" href="#gorder.Analysis.output_csv" title="Link to this definition"></a></dt>
-<dd><p>Path to an output CSV file containing analysis results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.membrane_normal">
-<span class="sig-name descname"><span class="pre">membrane_normal</span></span><a class="headerlink" href="#gorder.Analysis.membrane_normal" title="Link to this definition"></a></dt>
-<dd><p>Direction of the membrane normal.
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>structure</strong> (<em>str</em>) – Path to a TPR (recommended), PDB, GRO, or PQR file containing the structure and topology of the system.</p></li>
+<li><p><strong>trajectory</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Path to an XTC (recommended), TRR, or GRO trajectory file to be analyzed.
+You can provide multiple XTC or TRR trajectories and these will be seamlessly concatenated.</p></li>
+<li><p><strong>analysis_type</strong> (<em>Union</em><em>[</em><a class="reference internal" href="analysis_types.html#gorder.analysis_types.AAOrder" title="gorder.analysis_types.AAOrder"><em>AAOrder</em></a><em>, </em><a class="reference internal" href="analysis_types.html#gorder.analysis_types.CGOrder" title="gorder.analysis_types.CGOrder"><em>CGOrder</em></a><em>, </em><a class="reference internal" href="analysis_types.html#gorder.analysis_types.UAOrder" title="gorder.analysis_types.UAOrder"><em>UAOrder</em></a><em>]</em>) – Type of analysis to perform (e.g., AAOrder or CGOrder).</p></li>
+<li><p><strong>bonds</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Path to a file containing bonding information. If specified, this overrides bonds from the structure file.</p></li>
+<li><p><strong>index</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Path to an NDX file specifying groups in the system.</p></li>
+<li><p><strong>output_yaml</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Path to an output YAML file containing the full analysis results.</p></li>
+<li><p><strong>output_tab</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Path to an output TABLE file with human-readable results.</p></li>
+<li><p><strong>output_xvg</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Filename pattern for output XVG files storing results. Each molecule type gets a separate file.</p></li>
+<li><p><strong>output_csv</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Path to an output CSV file containing analysis results.</p></li>
+<li><p><strong>membrane_normal</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Mapping</em><em>[</em><em>str</em><em>, </em><em>ndarray</em><em>[</em><em>float32</em><em>]</em><em>]</em><em>, </em><a class="reference internal" href="membrane_normal.html#gorder.membrane_normal.DynamicNormal" title="gorder.membrane_normal.DynamicNormal"><em>DynamicNormal</em></a><em>]</em><em>]</em><em>, </em><em>default=None</em>) – Direction of the membrane normal.
 Allowed values are <cite>x</cite>, <cite>y</cite>, <cite>z</cite>, path to file, dictionary specifying manual membrane normals or an instance of <cite>DynamicNormal</cite>.
-Defaults to the z-axis if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[Union[str, dict, <a class="reference internal" href="membrane_normal.html#gorder.membrane_normal.DynamicNormal" title="gorder.membrane_normal.DynamicNormal">DynamicNormal</a>]], default=None</p>
+Defaults to the z-axis if not specified.</p></li>
+<li><p><strong>begin</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>, </em><em>default=None</em>) – Starting time of the trajectory analysis in picoseconds (ps). Defaults to the beginning of the trajectory.</p></li>
+<li><p><strong>end</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>, </em><em>default=None</em>) – Ending time of the trajectory analysis in picoseconds (ps). Defaults to the end of the trajectory.</p></li>
+<li><p><strong>step</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>default=None</em>) – Step size for analysis. Every Nth frame will be analyzed. Defaults to 1.</p></li>
+<li><p><strong>min_samples</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>default=None</em>) – Minimum number of samples required for each heavy atom or bond type to compute its order parameter. Defaults to 1.</p></li>
+<li><p><strong>n_threads</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>default=None</em>) – Number of threads to use for analysis. Defaults to 1.</p></li>
+<li><p><strong>leaflets</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="leaflets.html#gorder.leaflets.GlobalClassification" title="gorder.leaflets.GlobalClassification"><em>GlobalClassification</em></a><em>, </em><a class="reference internal" href="leaflets.html#gorder.leaflets.LocalClassification" title="gorder.leaflets.LocalClassification"><em>LocalClassification</em></a><em>, </em><a class="reference internal" href="leaflets.html#gorder.leaflets.IndividualClassification" title="gorder.leaflets.IndividualClassification"><em>IndividualClassification</em></a><em>, </em><a class="reference internal" href="leaflets.html#gorder.leaflets.ClusteringClassification" title="gorder.leaflets.ClusteringClassification"><em>ClusteringClassification</em></a><em>, </em><a class="reference internal" href="leaflets.html#gorder.leaflets.ManualClassification" title="gorder.leaflets.ManualClassification"><em>ManualClassification</em></a><em>, </em><a class="reference internal" href="leaflets.html#gorder.leaflets.NdxClassification" title="gorder.leaflets.NdxClassification"><em>NdxClassification</em></a><em>]</em><em>]</em><em>, </em><em>default=None</em>) – Defines how lipids are assigned to membrane leaflets. If provided, order parameters are calculated per leaflet.</p></li>
+<li><p><strong>ordermap</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="ordermap.html#gorder.ordermap.OrderMap" title="gorder.ordermap.OrderMap"><em>OrderMap</em></a><em>]</em><em>, </em><em>default=None</em>) – Specifies parameters for ordermap calculations. If not provided, ordermaps are not generated.</p></li>
+<li><p><strong>estimate_error</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="estimate_error.html#gorder.estimate_error.EstimateError" title="gorder.estimate_error.EstimateError"><em>EstimateError</em></a><em>]</em><em>, </em><em>default=None</em>) – Enables error estimation for each bond if specified.</p></li>
+<li><p><strong>geometry</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="geometry.html#gorder.geometry.Cuboid" title="gorder.geometry.Cuboid"><em>Cuboid</em></a><em>, </em><a class="reference internal" href="geometry.html#gorder.geometry.Cylinder" title="gorder.geometry.Cylinder"><em>Cylinder</em></a><em>, </em><a class="reference internal" href="geometry.html#gorder.geometry.Sphere" title="gorder.geometry.Sphere"><em>Sphere</em></a><em>]</em><em>]</em><em>, </em><em>default=None</em>) – Defines a specific region in the simulation box for order parameter calculations. Defaults to the entire system.</p></li>
+<li><p><strong>handle_pbc</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em><em>, </em><em>default=True</em>) – If False, ignores periodic boundary conditions (PBC). Defaults to True.</p></li>
+<li><p><strong>silent</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em><em>, </em><em>default=False</em>) – If True, suppresses standard output messages during analysis.</p></li>
+<li><p><strong>overwrite</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em><em>, </em><em>default=False</em>) – If True, overwrites existing output files and directories without backups.</p></li>
+</ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.begin">
-<span class="sig-name descname"><span class="pre">begin</span></span><a class="headerlink" href="#gorder.Analysis.begin" title="Link to this definition"></a></dt>
-<dd><p>Starting time of the trajectory analysis in picoseconds (ps). Defaults to the beginning of the trajectory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[float], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.end">
-<span class="sig-name descname"><span class="pre">end</span></span><a class="headerlink" href="#gorder.Analysis.end" title="Link to this definition"></a></dt>
-<dd><p>Ending time of the trajectory analysis in picoseconds (ps). Defaults to the end of the trajectory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[float], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.step">
-<span class="sig-name descname"><span class="pre">step</span></span><a class="headerlink" href="#gorder.Analysis.step" title="Link to this definition"></a></dt>
-<dd><p>Step size for analysis. Every Nth frame will be analyzed. Defaults to 1.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[int], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.min_samples">
-<span class="sig-name descname"><span class="pre">min_samples</span></span><a class="headerlink" href="#gorder.Analysis.min_samples" title="Link to this definition"></a></dt>
-<dd><p>Minimum number of samples required for each heavy atom or bond type to compute its order parameter. Defaults to 1.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[int], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.n_threads">
-<span class="sig-name descname"><span class="pre">n_threads</span></span><a class="headerlink" href="#gorder.Analysis.n_threads" title="Link to this definition"></a></dt>
-<dd><p>Number of threads to use for analysis. Defaults to 1.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[int], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.leaflets">
-<span class="sig-name descname"><span class="pre">leaflets</span></span><a class="headerlink" href="#gorder.Analysis.leaflets" title="Link to this definition"></a></dt>
-<dd><p>Defines how lipids are assigned to membrane leaflets. If provided, order parameters are calculated per leaflet.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[Union[<a class="reference internal" href="leaflets.html#gorder.leaflets.GlobalClassification" title="gorder.leaflets.GlobalClassification">GlobalClassification</a>, <a class="reference internal" href="leaflets.html#gorder.leaflets.LocalClassification" title="gorder.leaflets.LocalClassification">LocalClassification</a>, <a class="reference internal" href="leaflets.html#gorder.leaflets.IndividualClassification" title="gorder.leaflets.IndividualClassification">IndividualClassification</a>, <a class="reference internal" href="leaflets.html#gorder.leaflets.ManualClassification" title="gorder.leaflets.ManualClassification">ManualClassification</a>, <a class="reference internal" href="leaflets.html#gorder.leaflets.NdxClassification" title="gorder.leaflets.NdxClassification">NdxClassification</a>]], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.ordermap">
-<span class="sig-name descname"><span class="pre">ordermap</span></span><a class="headerlink" href="#gorder.Analysis.ordermap" title="Link to this definition"></a></dt>
-<dd><p>Specifies parameters for ordermap calculations. If not provided, ordermaps are not generated.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="ordermap.html#gorder.ordermap.OrderMap" title="gorder.ordermap.OrderMap">OrderMap</a>], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.estimate_error">
-<span class="sig-name descname"><span class="pre">estimate_error</span></span><a class="headerlink" href="#gorder.Analysis.estimate_error" title="Link to this definition"></a></dt>
-<dd><p>Enables error estimation for each bond if specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="estimate_error.html#gorder.estimate_error.EstimateError" title="gorder.estimate_error.EstimateError">EstimateError</a>], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.geometry">
-<span class="sig-name descname"><span class="pre">geometry</span></span><a class="headerlink" href="#gorder.Analysis.geometry" title="Link to this definition"></a></dt>
-<dd><p>Defines a specific region in the simulation box for order parameter calculations. Defaults to the entire system.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[Union[<a class="reference internal" href="geometry.html#gorder.geometry.Cuboid" title="gorder.geometry.Cuboid">Cuboid</a>, <a class="reference internal" href="geometry.html#gorder.geometry.Cylinder" title="gorder.geometry.Cylinder">Cylinder</a>, <a class="reference internal" href="geometry.html#gorder.geometry.Sphere" title="gorder.geometry.Sphere">Sphere</a>]], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.handle_pbc">
-<span class="sig-name descname"><span class="pre">handle_pbc</span></span><a class="headerlink" href="#gorder.Analysis.handle_pbc" title="Link to this definition"></a></dt>
-<dd><p>If False, ignores periodic boundary conditions (PBC). Defaults to True.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[bool], default=True</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.silent">
-<span class="sig-name descname"><span class="pre">silent</span></span><a class="headerlink" href="#gorder.Analysis.silent" title="Link to this definition"></a></dt>
-<dd><p>If True, suppresses standard output messages during analysis.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[bool], default=False</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.Analysis.overwrite">
-<span class="sig-name descname"><span class="pre">overwrite</span></span><a class="headerlink" href="#gorder.Analysis.overwrite" title="Link to this definition"></a></dt>
-<dd><p>If True, overwrites existing output files and directories without backups.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[bool], default=False</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.Analysis.from_file">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.Analysis.from_file" title="Link to this definition"></a></dt>
-<dd><p>Read the options for the analysis from a config YAML file.</p>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.Analysis.from_file" title="Link to this definition"></a></dt>
+<dd><p>Read analysis options from a YAML configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – Path to the YAML configuration file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Analysis instance initialized from the file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gorder.Analysis" title="gorder.Analysis">Analysis</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If the file cannot be read or parsed.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.Analysis.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.Analysis.run" title="Link to this definition"></a></dt>
-<dd><p>Perform the analysis.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="gorder.AtomType">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.</span></span><span class="sig-name descname"><span class="pre">AtomType</span></span><a class="headerlink" href="#gorder.AtomType" title="Link to this definition"></a></dt>
-<dd><p>Type of an atom specific to a molecule.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="gorder.AtomType.atom_name">
-<span class="sig-name descname"><span class="pre">atom_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.AtomType.atom_name" title="Link to this definition"></a></dt>
-<dd><p>Get the name of the atom type.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gorder.AtomType.relative_index">
-<span class="sig-name descname"><span class="pre">relative_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.AtomType.relative_index" title="Link to this definition"></a></dt>
-<dd><p>Get the relative index of the atom type in the molecule type.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gorder.AtomType.residue_name">
-<span class="sig-name descname"><span class="pre">residue_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.AtomType.residue_name" title="Link to this definition"></a></dt>
-<dd><p>Get the name of the residue this atom type is part of.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="gorder.Frequency">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.</span></span><span class="sig-name descname"><span class="pre">Frequency</span></span><a class="headerlink" href="#gorder.Frequency" title="Link to this definition"></a></dt>
-<dd><p>Frequency of some action being performed.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="gorder.Frequency.every">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">every</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_frames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.Frequency.every" title="Link to this definition"></a></dt>
-<dd><p>Perform the action every N frames.
-Returns an error if <cite>n_frames</cite> is 0.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gorder.Frequency.once">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">once</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.Frequency.once" title="Link to this definition"></a></dt>
-<dd><p>Perform the action once.</p>
+<dd><p>Run the analysis.</p>
+<p>Executes the configured analysis on the input data and returns the results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Results of the analysis.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="results.html#gorder.results.AnalysisResults" title="gorder.results.AnalysisResults">AnalysisResults</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.AnalysisError" title="gorder.exceptions.AnalysisError"><strong>AnalysisError</strong></a> – If the analysis fails.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

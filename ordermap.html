@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maps of order parameters &mdash; gorder &#34;0.6.0-dev.2&#34; documentation</title>
+  <title>Maps of order parameters &mdash; gorder &#34;1.2.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=97568a9e"></script>
+      <script src="_static/documentation_options.js?v=784e175d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -50,14 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="analysis_types.html">Analysis types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leaflets.html">Order parameters for individual leaflets</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Maps of order parameters</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.ordermap.OrderMap"><code class="docutils literal notranslate"><span class="pre">OrderMap</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.ordermap.OrderMap.output_directory"><code class="docutils literal notranslate"><span class="pre">OrderMap.output_directory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.ordermap.OrderMap.min_samples"><code class="docutils literal notranslate"><span class="pre">OrderMap.min_samples</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.ordermap.OrderMap.dim"><code class="docutils literal notranslate"><span class="pre">OrderMap.dim</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.ordermap.OrderMap.bin_size"><code class="docutils literal notranslate"><span class="pre">OrderMap.bin_size</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.ordermap.OrderMap.plane"><code class="docutils literal notranslate"><span class="pre">OrderMap.plane</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.ordermap.OrderMap"><code class="docutils literal notranslate"><span class="pre">OrderMap</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="estimate_error.html">Estimating error</a></li>
@@ -65,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="membrane_normal.html">Specifying membrane normal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Accessing the results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Errors you can encounter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -95,72 +89,29 @@
 <span id="maps-of-order-parameters"></span><h1>Maps of order parameters<a class="headerlink" href="#module-gorder.ordermap" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.ordermap.OrderMap">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.ordermap.</span></span><span class="sig-name descname"><span class="pre">OrderMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.ordermap.OrderMap" title="Link to this definition"></a></dt>
-<dd><p>Represents the parameters for generating ordermaps.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.ordermap.OrderMap.output_directory">
-<span class="sig-name descname"><span class="pre">output_directory</span></span><a class="headerlink" href="#gorder.ordermap.OrderMap.output_directory" title="Link to this definition"></a></dt>
-<dd><p>Directory where the output files containing individual order maps will be saved.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.ordermap.</span></span><span class="sig-name descname"><span class="pre">OrderMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.ordermap.OrderMap" title="Link to this definition"></a></dt>
+<dd><p>Parameters for generating order maps.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str]</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_directory</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Directory where output files containing individual order maps will be saved.</p></li>
+<li><p><strong>min_samples</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>default=1</em>) – Minimum number of samples required in a grid tile to calculate the order parameter.</p></li>
+<li><p><strong>dim</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em><em>]</em><em>]</em>) – Span of the grid along the axes:
+- First span corresponds to the x-axis (for xy or xz plane) or z-axis (for yz plane).
+- Second span corresponds to the y-axis (for xy or yz plane) or z-axis (for xz plane).
+If not specified, the span is derived from the simulation box size of the input structure.</p></li>
+<li><p><strong>bin_size</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em><em>, </em><em>default=</em><em>[</em><em>0.1</em><em>, </em><em>0.1</em><em>]</em>) – Size of the grid bin along the axes:
+- First bin dimension corresponds to the x-axis (for xy or xz plane) or z-axis (for yz plane).
+- Second bin dimension corresponds to the y-axis (for xy or yz plane) or z-axis (for xz plane).</p></li>
+<li><p><strong>plane</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Plane in which the order maps are constructed. Allowed values: <cite>xy</cite>, <cite>xz</cite>, <cite>yz</cite>.
+If not specified, the plane is assumed to be perpendicular to the membrane normal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If <cite>min_samples</cite> &lt;= 0, <cite>bin_size</cite> &lt;= 0, any <cite>dim</cite> span is invalid (first value &lt;= second),
+    or if <cite>plane</cite> is not one of the allowed values (<cite>xy</cite>, <cite>xz</cite>, <cite>yz</cite>).</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.ordermap.OrderMap.min_samples">
-<span class="sig-name descname"><span class="pre">min_samples</span></span><a class="headerlink" href="#gorder.ordermap.OrderMap.min_samples" title="Link to this definition"></a></dt>
-<dd><p>Minimum number of samples required in a grid tile to calculate the order parameter.
-Default is <cite>1</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.ordermap.OrderMap.dim">
-<span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#gorder.ordermap.OrderMap.dim" title="Link to this definition"></a></dt>
-<dd><p>Span of the grid along the axes.
-- The first span corresponds to the x-axis (if the map is in the xy or xz plane) or the z-axis (if the map is in the yz plane).
-- The second span corresponds to the y-axis (if the map is in the xy or yz plane) or the z-axis (if the map is in the xz plane).
-If not specified, the span is derived from the simulation box size of the input structure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[Union[str, List[float]]]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.ordermap.OrderMap.bin_size">
-<span class="sig-name descname"><span class="pre">bin_size</span></span><a class="headerlink" href="#gorder.ordermap.OrderMap.bin_size" title="Link to this definition"></a></dt>
-<dd><p>Size of the grid bin along the axes.
-- The first bin dimension corresponds to the x-axis (if the map is in the xy or xz plane) or the z-axis (if the map is in the yz plane).
-- The second bin dimension corresponds to the y-axis (if the map is in the xy or yz plane) or the z-axis (if the map is in the xz plane).
-Defaults to <cite>[0.1, 0.1]</cite> nm if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[List[float]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.ordermap.OrderMap.plane">
-<span class="sig-name descname"><span class="pre">plane</span></span><a class="headerlink" href="#gorder.ordermap.OrderMap.plane" title="Link to this definition"></a></dt>
-<dd><p>Plane in which the order maps should be constructed.
-Allowed values are <cite>xy</cite>, <cite>xz</cite>, or <cite>yz</cite>.
-If not specified, the plane is assumed to be perpendicular to the membrane normal.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>

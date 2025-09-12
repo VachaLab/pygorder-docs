@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accessing the results &mdash; gorder &#34;0.6.0-dev.2&#34; documentation</title>
+  <title>Accessing the results &mdash; gorder &#34;1.2.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=97568a9e"></script>
+      <script src="_static/documentation_options.js?v=784e175d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -58,8 +58,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.average_order"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.average_order()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.average_ordermaps"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.average_ordermaps()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.get_molecule"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.get_molecule()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.leaflets_data"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.leaflets_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.molecules"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.molecules()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.n_analyzed_frames"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.n_analyzed_frames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.normals_data"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.normals_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.AnalysisResults.write"><code class="docutils literal notranslate"><span class="pre">AnalysisResults.write()</span></code></a></li>
 </ul>
 </li>
@@ -84,6 +86,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.Convergence.lower"><code class="docutils literal notranslate"><span class="pre">Convergence.lower()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.Convergence.total"><code class="docutils literal notranslate"><span class="pre">Convergence.total()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gorder.results.Convergence.upper"><code class="docutils literal notranslate"><span class="pre">Convergence.upper()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.results.LeafletsData"><code class="docutils literal notranslate"><span class="pre">LeafletsData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gorder.results.LeafletsData.frames"><code class="docutils literal notranslate"><span class="pre">LeafletsData.frames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gorder.results.LeafletsData.get_molecule"><code class="docutils literal notranslate"><span class="pre">LeafletsData.get_molecule()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gorder.results.Map"><code class="docutils literal notranslate"><span class="pre">Map</span></code></a><ul>
@@ -125,6 +132,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Errors you can encounter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -155,163 +163,417 @@
 <span id="accessing-the-results"></span><h1>Accessing the results<a class="headerlink" href="#module-gorder.results" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.AnalysisResults">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">AnalysisResults</span></span><a class="headerlink" href="#gorder.results.AnalysisResults" title="Link to this definition"></a></dt>
-<dd><p>Class containing all the results of the analysis.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">AnalysisResults</span></span><a class="headerlink" href="#gorder.results.AnalysisResults" title="Link to this definition"></a></dt>
+<dd><p>Container for all results of an analysis.</p>
+<p>Provides access to overall results, per-molecule results, average order
+parameters, average order maps, and optionally collected leaflet classification data.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AnalysisResults.average_order">
 <span class="sig-name descname"><span class="pre">average_order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.average_order" title="Link to this definition"></a></dt>
-<dd><p>Get the average order parameters calculated from all bond types of all molecule types.</p>
+<dd><p>Get average order parameters across all bond types of all molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of average order parameters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderCollection" title="gorder.results.OrderCollection">OrderCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AnalysisResults.average_ordermaps">
 <span class="sig-name descname"><span class="pre">average_ordermaps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.average_ordermaps" title="Link to this definition"></a></dt>
-<dd><p>Get the average order parameter maps calculated from all bond types of all molecule types.</p>
+<dd><p>Get average order parameter maps across all bond types of all molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of average order maps.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderMapsCollection" title="gorder.results.OrderMapsCollection">OrderMapsCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AnalysisResults.get_molecule">
 <span class="sig-name descname"><span class="pre">get_molecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.get_molecule" title="Link to this definition"></a></dt>
-<dd><p>Get the results for a molecule with the specified name.
-Raises an exception if such molecule does not exist.</p>
+<dd><p>Get results for a molecule type with the specified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the molecule type.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Results for the specified molecule type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gorder.results.MoleculeResults" title="gorder.results.MoleculeResults">MoleculeResults</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.APIError" title="gorder.exceptions.APIError"><strong>APIError</strong></a> – If no molecule type with the given name exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gorder.results.AnalysisResults.leaflets_data">
+<span class="sig-name descname"><span class="pre">leaflets_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.leaflets_data" title="Link to this definition"></a></dt>
+<dd><p>Get collected leaflet classification data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Leaflet classification data if stored; otherwise <cite>None</cite>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.LeafletsData" title="gorder.results.LeafletsData">LeafletsData</a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Leaflet classification data are not stored by default. To store them,
+you must explicitly request collection during analysis.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AnalysisResults.molecules">
 <span class="sig-name descname"><span class="pre">molecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.molecules" title="Link to this definition"></a></dt>
-<dd><p>Get the results for each individual molecule.</p>
+<dd><p>Get results for all individual molecule types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of results for each molecule type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#gorder.results.MoleculeResults" title="gorder.results.MoleculeResults">MoleculeResults</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AnalysisResults.n_analyzed_frames">
 <span class="sig-name descname"><span class="pre">n_analyzed_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.n_analyzed_frames" title="Link to this definition"></a></dt>
 <dd><p>Get the total number of analyzed frames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of frames processed in the analysis.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gorder.results.AnalysisResults.normals_data">
+<span class="sig-name descname"><span class="pre">normals_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.normals_data" title="Link to this definition"></a></dt>
+<dd><p>Get collected membrane normals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Membrane normals data if stored; otherwise <cite>None</cite>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>NormalsData</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Membrane normals are not stored by default. To store them,
+you must explicitly request collection during analysis.
+Collecting membrane normals is only supported when they are dynamically calculated.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AnalysisResults.write">
 <span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AnalysisResults.write" title="Link to this definition"></a></dt>
-<dd><p>Write the results of the analysis into output files.</p>
+<dd><p>Write the results into output files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.WriteError" title="gorder.exceptions.WriteError"><strong>WriteError</strong></a> – If writing fails due to file system or internal errors.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.AtomResults">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">AtomResults</span></span><a class="headerlink" href="#gorder.results.AtomResults" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">AtomResults</span></span><a class="headerlink" href="#gorder.results.AtomResults" title="Link to this definition"></a></dt>
 <dd><p>Results of the analysis for a single atom type.</p>
+<p>Provides access to per-atom type order parameters, order maps, and the bond results
+associated with this atom type.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AtomResults.atom">
 <span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AtomResults.atom" title="Link to this definition"></a></dt>
 <dd><p>Get the type of the atom for which these results were calculated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The atom type for which these results were calculated.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>AtomType</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AtomResults.bonds">
 <span class="sig-name descname"><span class="pre">bonds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AtomResults.bonds" title="Link to this definition"></a></dt>
-<dd><p>Get the results for each bond of the atom.</p>
+<dd><p>Get the results for each bond type of this atom type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Results for all bond types involving this atom type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#gorder.results.BondResults" title="gorder.results.BondResults">BondResults</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AtomResults.get_bond">
 <span class="sig-name descname"><span class="pre">get_bond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AtomResults.get_bond" title="Link to this definition"></a></dt>
-<dd><p>Get the results for a bond between this heavy atom and the hydrogen atom with the specified relative index (AA) or
-get the results for a bond between this heavy atom and the virtual hydrogen atom with the specified index (UA).</p>
+<dd><p>Get the results for a bond types between this atom type and a hydrogen type (AA) or virtual hydrogen type (UA).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>relative_index</strong> (<em>int</em>) – Relative index (zero-based) of the bonded hydrogen atom type.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Results for the specified bond type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gorder.results.BondResults" title="gorder.results.BondResults">BondResults</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.APIError" title="gorder.exceptions.APIError"><strong>APIError</strong></a> – If the specified (virtual) hydrogen type does not exist.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AtomResults.molecule">
 <span class="sig-name descname"><span class="pre">molecule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AtomResults.molecule" title="Link to this definition"></a></dt>
-<dd><p>Get the name of the molecule type for which these results were calculated.</p>
+<dd><p>Get the name of the molecule type for this atom type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the molecule containing this atom type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AtomResults.order">
 <span class="sig-name descname"><span class="pre">order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AtomResults.order" title="Link to this definition"></a></dt>
-<dd><p>Get the order parameters calculated for this atom.</p>
+<dd><p>Get order parameters calculated for this atom type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of order parameters for this atom type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderCollection" title="gorder.results.OrderCollection">OrderCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.AtomResults.ordermaps">
 <span class="sig-name descname"><span class="pre">ordermaps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.AtomResults.ordermaps" title="Link to this definition"></a></dt>
-<dd><p>Get the ordermaps calculated for this atom.</p>
+<dd><p>Get order maps calculated for this atom type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of order maps for this atom type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderMapsCollection" title="gorder.results.OrderMapsCollection">OrderMapsCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.BondResults">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">BondResults</span></span><a class="headerlink" href="#gorder.results.BondResults" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">BondResults</span></span><a class="headerlink" href="#gorder.results.BondResults" title="Link to this definition"></a></dt>
 <dd><p>Results of the analysis for a single bond type.</p>
+<p>Provides access to the molecule name, the atom types involved (if available),
+and the order parameters and order maps for this bond type.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.BondResults.atoms">
 <span class="sig-name descname"><span class="pre">atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.BondResults.atoms" title="Link to this definition"></a></dt>
 <dd><p>Get the atom types involved in this bond type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The two atom types forming this bond type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[AtomType, AtomType]</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.APIError" title="gorder.exceptions.APIError"><strong>APIError</strong></a> – If the bond type is a virtual united-atom bond type (UA), where only one real atom type exists.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.BondResults.molecule">
 <span class="sig-name descname"><span class="pre">molecule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.BondResults.molecule" title="Link to this definition"></a></dt>
-<dd><p>Get the name of the molecule type for which these results were calculated.</p>
+<dd><p>Get the name of the molecule type for this bond type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the molecule containing this bond type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.BondResults.order">
 <span class="sig-name descname"><span class="pre">order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.BondResults.order" title="Link to this definition"></a></dt>
-<dd><p>Get the order parameters calculated for this bond.</p>
+<dd><p>Get order parameters calculated for this bond type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of order parameters for this bond type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderCollection" title="gorder.results.OrderCollection">OrderCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.BondResults.ordermaps">
 <span class="sig-name descname"><span class="pre">ordermaps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.BondResults.ordermaps" title="Link to this definition"></a></dt>
-<dd><p>Get the maps of order parameters calculated for this bond.</p>
+<dd><p>Get order maps calculated for this bond type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of order maps for this bond type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderMapsCollection" title="gorder.results.OrderMapsCollection">OrderMapsCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.Convergence">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">Convergence</span></span><a class="headerlink" href="#gorder.results.Convergence" title="Link to this definition"></a></dt>
-<dd><p>Stores information about the convergence of calculations,
-i.e. the average order parameter for this molecule collected in time.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">Convergence</span></span><a class="headerlink" href="#gorder.results.Convergence" title="Link to this definition"></a></dt>
+<dd><p>Stores information about the convergence of order parameter calculations
+for a single molecule.</p>
+<p>Provides cumulative averages over time for the full membrane and for
+individual leaflets.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Convergence.frames">
 <span class="sig-name descname"><span class="pre">frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Convergence.frames" title="Link to this definition"></a></dt>
-<dd><p>Extract indices of trajectory frames where order parameters were calculated.
-The first analyzed frame is assigned an index of 1. For instance, if the
-analysis begins at 200 ns, the frame at or just after 200 ns is indexed as 1.</p>
+<dd><p>Get the indices of trajectory frames for which order parameters were calculated.</p>
+<p>The first analyzed frame is assigned an index of 1. For example,
+if the analysis starts at 200 ns, the frame at or just after 200 ns
+is indexed as 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Indices of the analyzed frames.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[int]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Convergence.lower">
 <span class="sig-name descname"><span class="pre">lower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Convergence.lower" title="Link to this definition"></a></dt>
-<dd><p>Extract cumulative average order parameters for this molecule, calculated only for the lower leaflet.
-Follows the same format and logic as <code class="docutils literal notranslate"><span class="pre">total</span></code>.</p>
+<dd><p>Get cumulative average order parameters for the lower leaflet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cumulative averages for the lower leaflet, or <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[float]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Convergence.total">
 <span class="sig-name descname"><span class="pre">total</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Convergence.total" title="Link to this definition"></a></dt>
-<dd><p>Extract cumulative average order parameters for this molecule, calculated across the entire membrane.</p>
-<p>Each value in the vector represents the cumulative average for a molecule up to a specific frame:
-The first element corresponds to the value from the first frame.
-The second element is the average from the first two frames.
-The third element is the average from the first three frames, and so on.
-The last element is the overall average across all frames.</p>
+<dd><p>Get cumulative average order parameters for the entire membrane.</p>
+<p>Each element represents the cumulative average up to that frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cumulative averages for the full membrane, or <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[float]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Convergence.upper">
 <span class="sig-name descname"><span class="pre">upper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Convergence.upper" title="Link to this definition"></a></dt>
-<dd><p>Extract umulative average order parameters for this molecule, calculated only for the upper leaflet.
-Follows the same format and logic as <code class="docutils literal notranslate"><span class="pre">total</span></code>.</p>
+<dd><p>Get cumulative average order parameters for the upper leaflet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cumulative averages for the upper leaflet, or <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gorder.results.LeafletsData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">LeafletsData</span></span><a class="headerlink" href="#gorder.results.LeafletsData" title="Link to this definition"></a></dt>
+<dd><p>Stores collected leaflet classification data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gorder.results.LeafletsData.frames">
+<span class="sig-name descname"><span class="pre">frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.LeafletsData.frames" title="Link to this definition"></a></dt>
+<dd><p>Get the indices of trajectory frames for which leaflet classification was performed.</p>
+<p>The first analyzed frame is assigned an index of 1. For example,
+if the analysis starts at 200 ns, the frame at or just after 200 ns
+is indexed as 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Indices of the frames for which leaflet classification was performed.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gorder.results.LeafletsData.get_molecule">
+<span class="sig-name descname"><span class="pre">get_molecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.LeafletsData.get_molecule" title="Link to this definition"></a></dt>
+<dd><p>Get leaflet classification data for the specified molecule type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>molecule</strong> (<em>str</em>) – Name of the molecule type to query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2D array where rows correspond to analyzed trajectory frames and columns to
+individual molecules. Values are <cite>1</cite> for molecules in the upper leaflet
+and <cite>0</cite> for molecules in the lower leaflet. Returns <cite>None</cite> if no leaflet
+classification data exists for the specified molecule type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray of shape (n_frames, n_molecules), dtype=uint8</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This is a potentially expensive operation, as it involves copying and
+converting from the internal Rust representation into a NumPy array.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.Map">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">Map</span></span><a class="headerlink" href="#gorder.results.Map" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">Map</span></span><a class="headerlink" href="#gorder.results.Map" title="Link to this definition"></a></dt>
 <dd><p>Map of order parameters.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Map.extract">
@@ -319,13 +581,13 @@ Follows the same format and logic as <code class="docutils literal notranslate">
 <dd><p>Extract the order map into NumPy arrays.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A tuple of NumPy arrays.
-The first array (1D) contains positions of the grid tiles along the x-axis.
-The second array (1D) contains positions of the grid tiles along the y-axis.
-The third array (2D) contains the calculated order parameters.</p>
+<dd class="field-odd"><p>A tuple of NumPy arrays:
+- The first array (1D) contains positions of the grid tiles along the first dimension of the map (typically <cite>x</cite>).
+- The second array (1D) contains positions of the grid tiles along the second dimension of the map (typically <cite>y</cite>).
+- The third array (2D) contains the calculated order parameters.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple[np.ndarray, np.ndarray, np.ndarray]</p>
+<dd class="field-even"><p>Tuple[np.ndarray[float32], np.ndarray[float32], np.ndarray[float32]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -333,157 +595,333 @@ The third array (2D) contains the calculated order parameters.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Map.get_at">
 <span class="sig-name descname"><span class="pre">get_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Map.get_at" title="Link to this definition"></a></dt>
-<dd><p>Get the value of the order parameter at the specified coordinates.</p>
+<dd><p>Get the order parameter at the specified coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Coordinate along the first dimension of the map.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Coordinate along the second dimension of the map.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Order parameter at the given coordinates, or <cite>None</cite> if out of bounds.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Map.span_x">
 <span class="sig-name descname"><span class="pre">span_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Map.span_x" title="Link to this definition"></a></dt>
-<dd><p>Get the span of the map in the x-dimension.</p>
+<dd><p>Get the span of the map along the first dimension of the map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Minimum and maximum coordinates along the first dimension of the map.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[float, float]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Map.span_y">
 <span class="sig-name descname"><span class="pre">span_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Map.span_y" title="Link to this definition"></a></dt>
-<dd><p>Get the span of the map along the y-dimension.</p>
+<dd><p>Get the span of the map along the second dimension of the map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Minimum and maximum coordinates along the second dimension of the map.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[float, float]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Map.tile_dim">
 <span class="sig-name descname"><span class="pre">tile_dim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Map.tile_dim" title="Link to this definition"></a></dt>
-<dd><p>Get the dimnesions of a single grid tile of the map.</p>
+<dd><p>Get the dimensions of a single grid tile in the map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Width and height of a single tile of the map.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[float, float]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">MoleculeResults</span></span><a class="headerlink" href="#gorder.results.MoleculeResults" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">MoleculeResults</span></span><a class="headerlink" href="#gorder.results.MoleculeResults" title="Link to this definition"></a></dt>
 <dd><p>Results of the analysis for a single molecule type.</p>
+<p>Provides access to average order parameters, average order maps, and per-atom or
+per-bond results, as well as convergence data when available.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.atoms">
 <span class="sig-name descname"><span class="pre">atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.atoms" title="Link to this definition"></a></dt>
-<dd><p>Get the results for each atom of the molecule.
-Not available for coarse-grained order parameters, use <cite>bonds</cite> instead.</p>
+<dd><p>Get results for each heavy atom type of the molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Per-atom type results.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#gorder.results.AtomResults" title="gorder.results.AtomResults">AtomResults</a>]</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.APIError" title="gorder.exceptions.APIError"><strong>APIError</strong></a> – If results are obtained for a coarse-grained system (atom-level results unavailable).</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.average_order">
 <span class="sig-name descname"><span class="pre">average_order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.average_order" title="Link to this definition"></a></dt>
-<dd><p>Get the average order parameters calculated from all bond types of this molecule type.</p>
+<dd><p>Get average order parameters for this molecule type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of average order parameters across all bond types.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderCollection" title="gorder.results.OrderCollection">OrderCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.average_ordermaps">
 <span class="sig-name descname"><span class="pre">average_ordermaps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.average_ordermaps" title="Link to this definition"></a></dt>
-<dd><p>Get the average order parameter maps calculated from all bond types of this molecule type.</p>
+<dd><p>Get average order parameter maps for this molecule type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of average order maps across all bond types.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.OrderMapsCollection" title="gorder.results.OrderMapsCollection">OrderMapsCollection</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.bonds">
 <span class="sig-name descname"><span class="pre">bonds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.bonds" title="Link to this definition"></a></dt>
-<dd><p>Get the results for each bond of the molecule.</p>
+<dd><p>Get results for each bond type of the molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Per-bond type results.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#gorder.results.BondResults" title="gorder.results.BondResults">BondResults</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.convergence">
 <span class="sig-name descname"><span class="pre">convergence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.convergence" title="Link to this definition"></a></dt>
-<dd><p>Get data about the convergence of the calculated order parameters.
-Returns <cite>None</cite> if convergence is not available.</p>
+<dd><p>Get convergence data for the molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Convergence data if available; otherwise <cite>None</cite>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.Convergence" title="gorder.results.Convergence">Convergence</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.get_atom">
 <span class="sig-name descname"><span class="pre">get_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.get_atom" title="Link to this definition"></a></dt>
-<dd><p>Get the results for a heavy atom with the specified relative index.
-Not available for coarse-grained order parameters, use <cite>get_bond</cite> instead.</p>
+<dd><p>Get results for a heavy atom type with the specified relative index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>relative_index</strong> (<em>int</em>) – Relative index (zero-based) of the atom type within the molecule type.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Results for the specified atom type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gorder.results.AtomResults" title="gorder.results.AtomResults">AtomResults</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.APIError" title="gorder.exceptions.APIError"><strong>APIError</strong></a> – If the atom type does not exist or results are obtained for a coarse-grained system.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.get_bond">
 <span class="sig-name descname"><span class="pre">get_bond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_index_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_index_2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.get_bond" title="Link to this definition"></a></dt>
-<dd><p>Get the results for a bond involving atoms with the specified relative indices.
-The order of the atom indices does not matter.
-Not available for united-atom order parameters.</p>
+<dd><p>Get results for a bond type involving atom types with the specified relative indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>relative_index_1</strong> (<em>int</em>)</p></li>
+<li><p><strong>relative_index_2</strong> (<em>int</em>) – Relative indices (zero-based) of the bonded atom types.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Results for the specified bond type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gorder.results.BondResults" title="gorder.results.BondResults">BondResults</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.APIError" title="gorder.exceptions.APIError"><strong>APIError</strong></a> – If the bond type does not exist or the results are obtained for a united-atom system.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.MoleculeResults.molecule">
 <span class="sig-name descname"><span class="pre">molecule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.MoleculeResults.molecule" title="Link to this definition"></a></dt>
-<dd><p>Get the name of the molecule for which these results were calculated.</p>
+<dd><p>Get the name of the molecule type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the molecule type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.Order">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">Order</span></span><a class="headerlink" href="#gorder.results.Order" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">Order</span></span><a class="headerlink" href="#gorder.results.Order" title="Link to this definition"></a></dt>
 <dd><p>Single order parameter value, optionally with its estimated error.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Order.error">
 <span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Order.error" title="Link to this definition"></a></dt>
-<dd><p>Get the estimated error for this order parameter.
-Returns <cite>None</cite> if the error is not available.</p>
+<dd><p>Get the estimated error for this order parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Estimated error of the order parameter, or <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.Order.value">
 <span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.Order.value" title="Link to this definition"></a></dt>
 <dd><p>Get the value of the order parameter (mean from the analyzed frames).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mean value of the order parameter.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.OrderCollection">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">OrderCollection</span></span><a class="headerlink" href="#gorder.results.OrderCollection" title="Link to this definition"></a></dt>
-<dd><p>Order parameters for a single object calculated for the full membrane, the upper leaflet, and the lower leaflet.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">OrderCollection</span></span><a class="headerlink" href="#gorder.results.OrderCollection" title="Link to this definition"></a></dt>
+<dd><p>Order parameters for a single object (atom type, bond type, molecule type, system)
+calculated for the full membrane, the upper leaflet, and the lower leaflet.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.OrderCollection.lower">
 <span class="sig-name descname"><span class="pre">lower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.OrderCollection.lower" title="Link to this definition"></a></dt>
-<dd><p>Get order parameter calculated from the lower leaflet.
-Returns <cite>None</cite> if the order parameter is not available.</p>
+<dd><p>Get the order parameter calculated from the lower leaflet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Order parameter for the lower leaflet. Returns <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.Order" title="gorder.results.Order">Order</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.OrderCollection.total">
 <span class="sig-name descname"><span class="pre">total</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.OrderCollection.total" title="Link to this definition"></a></dt>
-<dd><p>Get order parameter calculated from the whole membrane.
-Returns <cite>None</cite> if the order parameter is not available.</p>
+<dd><p>Get the order parameter calculated from the whole membrane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Order parameter for the whole membrane. Returns <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.Order" title="gorder.results.Order">Order</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.OrderCollection.upper">
 <span class="sig-name descname"><span class="pre">upper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.OrderCollection.upper" title="Link to this definition"></a></dt>
-<dd><p>Get order parameter calculated from the upper leaflet.
-Returns <cite>None</cite> if the order parameter is not available.</p>
+<dd><p>Get the order parameter calculated from the upper leaflet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Order parameter for the upper leaflet. Returns <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.Order" title="gorder.results.Order">Order</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.results.OrderMapsCollection">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">OrderMapsCollection</span></span><a class="headerlink" href="#gorder.results.OrderMapsCollection" title="Link to this definition"></a></dt>
-<dd><p>Ordermaps for a single object calculated for the full membrane, the upper leaflet, and the lower leaflet.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.results.</span></span><span class="sig-name descname"><span class="pre">OrderMapsCollection</span></span><a class="headerlink" href="#gorder.results.OrderMapsCollection" title="Link to this definition"></a></dt>
+<dd><p>Order maps for a single object (atom type, bond type, molecule type, system)
+calculated for the full membrane, the upper leaflet, and the lower leaflet.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.OrderMapsCollection.lower">
 <span class="sig-name descname"><span class="pre">lower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.OrderMapsCollection.lower" title="Link to this definition"></a></dt>
-<dd><p>Get order parameter map calculated from the lower leaflet.
-Returns <cite>None</cite> if the ordermap is not available.</p>
+<dd><p>Get the order map calculated from the lower leaflet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Order map for the lower leaflet, or <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.Map" title="gorder.results.Map">Map</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.OrderMapsCollection.total">
 <span class="sig-name descname"><span class="pre">total</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.OrderMapsCollection.total" title="Link to this definition"></a></dt>
-<dd><p>Get order parameter map calculated from the whole membrane.
-Returns <cite>None</cite> if the ordermap is not available.</p>
+<dd><p>Get the order map calculated from the whole membrane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Order map for the whole membrane, or <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.Map" title="gorder.results.Map">Map</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gorder.results.OrderMapsCollection.upper">
 <span class="sig-name descname"><span class="pre">upper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gorder.results.OrderMapsCollection.upper" title="Link to this definition"></a></dt>
-<dd><p>Get order parameter map calculated from the upper leaflet.
-Returns <cite>None</cite> if the ordermap is not available.</p>
+<dd><p>Get the order map calculated from the upper leaflet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Order map for the upper leaflet, or <cite>None</cite> if not available.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gorder.results.Map" title="gorder.results.Map">Map</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

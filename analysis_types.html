@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analysis types &mdash; gorder &#34;0.6.0-dev.2&#34; documentation</title>
+  <title>Analysis types &mdash; gorder &#34;1.2.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=97568a9e"></script>
+      <script src="_static/documentation_options.js?v=784e175d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -48,21 +48,9 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gorder.html">Performing the analysis</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Analysis types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.analysis_types.AAOrder"><code class="docutils literal notranslate"><span class="pre">AAOrder</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.analysis_types.AAOrder.heavy_atoms"><code class="docutils literal notranslate"><span class="pre">AAOrder.heavy_atoms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.analysis_types.AAOrder.hydrogens"><code class="docutils literal notranslate"><span class="pre">AAOrder.hydrogens</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.analysis_types.CGOrder"><code class="docutils literal notranslate"><span class="pre">CGOrder</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.analysis_types.CGOrder.beads"><code class="docutils literal notranslate"><span class="pre">CGOrder.beads</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gorder.analysis_types.UAOrder"><code class="docutils literal notranslate"><span class="pre">UAOrder</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.analysis_types.UAOrder.saturated"><code class="docutils literal notranslate"><span class="pre">UAOrder.saturated</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.analysis_types.UAOrder.unsaturated"><code class="docutils literal notranslate"><span class="pre">UAOrder.unsaturated</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gorder.analysis_types.UAOrder.ignore"><code class="docutils literal notranslate"><span class="pre">UAOrder.ignore</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.analysis_types.AAOrder"><code class="docutils literal notranslate"><span class="pre">AAOrder</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.analysis_types.CGOrder"><code class="docutils literal notranslate"><span class="pre">CGOrder</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.analysis_types.UAOrder"><code class="docutils literal notranslate"><span class="pre">UAOrder</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="leaflets.html">Order parameters for individual leaflets</a></li>
@@ -72,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="membrane_normal.html">Specifying membrane normal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Accessing the results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Errors you can encounter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -102,30 +91,16 @@
 <span id="analysis-types"></span><h1>Analysis types<a class="headerlink" href="#module-gorder.analysis_types" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.analysis_types.AAOrder">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.analysis_types.</span></span><span class="sig-name descname"><span class="pre">AAOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heavy_atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hydrogens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.analysis_types.AAOrder" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.analysis_types.</span></span><span class="sig-name descname"><span class="pre">AAOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heavy_atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hydrogens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.analysis_types.AAOrder" title="Link to this definition"></a></dt>
 <dd><p>Request the calculation of atomistic order parameters.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.analysis_types.AAOrder.heavy_atoms">
-<span class="sig-name descname"><span class="pre">heavy_atoms</span></span><a class="headerlink" href="#gorder.analysis_types.AAOrder.heavy_atoms" title="Link to this definition"></a></dt>
-<dd><p>Selection query specifying the heavy atoms to be used in the analysis (typically carbon atoms in lipid tails).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heavy_atoms</strong> (<em>str</em>) – Selection query specifying the heavy atoms to be used in the analysis (typically carbon atoms in lipid tails).</p></li>
+<li><p><strong>hydrogens</strong> (<em>str</em>) – Selection query specifiying the hydrogen atoms to be used in the analysis (only those bonded to heavy atoms will be considered).</p></li>
+</ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.analysis_types.AAOrder.hydrogens">
-<span class="sig-name descname"><span class="pre">hydrogens</span></span><a class="headerlink" href="#gorder.analysis_types.AAOrder.hydrogens" title="Link to this definition"></a></dt>
-<dd><p>Selection query specifiying the hydrogen atoms to be used in the analysis (only those bonded to heavy atoms will be considered).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Notes</p>
 <ul class="simple">
 <li><p>Atoms should be specified using the <a class="reference external" href="https://ladme.github.io/gsl-guide">groan selection language</a>.</p></li>
@@ -136,19 +111,13 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.analysis_types.CGOrder">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.analysis_types.</span></span><span class="sig-name descname"><span class="pre">CGOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beads</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.analysis_types.CGOrder" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.analysis_types.</span></span><span class="sig-name descname"><span class="pre">CGOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beads</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.analysis_types.CGOrder" title="Link to this definition"></a></dt>
 <dd><p>Request the calculation of coarse-grained order parameters.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.analysis_types.CGOrder.beads">
-<span class="sig-name descname"><span class="pre">beads</span></span><a class="headerlink" href="#gorder.analysis_types.CGOrder.beads" title="Link to this definition"></a></dt>
-<dd><p>Selection query specifying the coarse-grained beads to be used in the analysis.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>beads</strong> (<em>str</em>) – Selection query specifying the coarse-grained beads to be used in the analysis.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <p class="rubric">Notes</p>
 <ul class="simple">
 <li><p>Beads should be specified using the <a class="reference external" href="https://ladme.github.io/gsl-guide">groan selection language</a>.</p></li>
@@ -158,41 +127,17 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.analysis_types.UAOrder">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.analysis_types.</span></span><span class="sig-name descname"><span class="pre">UAOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">saturated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsaturated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.analysis_types.UAOrder" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.analysis_types.</span></span><span class="sig-name descname"><span class="pre">UAOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">saturated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsaturated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.analysis_types.UAOrder" title="Link to this definition"></a></dt>
 <dd><p>Request the calculation of united-atom order parameters.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.analysis_types.UAOrder.saturated">
-<span class="sig-name descname"><span class="pre">saturated</span></span><a class="headerlink" href="#gorder.analysis_types.UAOrder.saturated" title="Link to this definition"></a></dt>
-<dd><p>Selection query specifying saturated carbons which order parameters should be calculated.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>saturated</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Selection query specifying saturated carbons which order parameters should be calculated.</p></li>
+<li><p><strong>unsaturated</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Selection query specifying unsaturated carbons which order parameters should be calculated.</p></li>
+<li><p><strong>ignore</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>default=None</em>) – Selection query specifying atoms to be completely ignored when performing the analysis.</p></li>
+</ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.analysis_types.UAOrder.unsaturated">
-<span class="sig-name descname"><span class="pre">unsaturated</span></span><a class="headerlink" href="#gorder.analysis_types.UAOrder.unsaturated" title="Link to this definition"></a></dt>
-<dd><p>Selection query specifying unsaturated carbons which order parameters should be calculated.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gorder.analysis_types.UAOrder.ignore">
-<span class="sig-name descname"><span class="pre">ignore</span></span><a class="headerlink" href="#gorder.analysis_types.UAOrder.ignore" title="Link to this definition"></a></dt>
-<dd><p>Selection query specifying atoms to be completely ignored when performing the analysis.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Optional[str], default=None</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Notes</p>
 <ul class="simple">
 <li><p>To specify atoms, use the <a class="reference external" href="https://ladme.github.io/gsl-guide">groan selection language</a>.</p></li>
