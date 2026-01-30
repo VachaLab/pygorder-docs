@@ -91,7 +91,7 @@
 <span id="order-parameters-for-specific-membrane-region"></span><h1>Order parameters for specific membrane region<a class="headerlink" href="#module-gorder.geometry" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.geometry.Cuboid">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cuboid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ydim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cuboid" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cuboid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ydim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cuboid" title="Link to this definition"></a></dt>
 <dd><p>Calculate order parameters inside a cuboid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -100,6 +100,7 @@
 <li><p><strong>ydim</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Span of the cuboid along the y-axis [nm]. Defaults to infinite if not specified.</p></li>
 <li><p><strong>zdim</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Span of the cuboid along the z-axis [nm]. Defaults to infinite if not specified.</p></li>
 <li><p><strong>reference</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>,</em><em>str</em><em>]</em><em>]</em>) – Reference point for the cuboid position. Defaults to [0.0, 0.0, 0.0].</p></li>
+<li><p><strong>invert</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Should the geometry selection be inverted? Defaults to False.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
@@ -110,7 +111,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.geometry.Cylinder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cylinder" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cylinder" title="Link to this definition"></a></dt>
 <dd><p>Calculate order parameters inside a cylinder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -119,6 +120,7 @@
 <li><p><strong>orientation</strong> (<em>str</em>) – Orientation of the cylinder’s main axis. Expected values are x, y, or z.</p></li>
 <li><p><strong>span</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Span along the main axis [nm]. Defaults to infinite if not specified.</p></li>
 <li><p><strong>reference</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>,</em><em>str</em><em>]</em><em>]</em>) – Reference point for position and size. Defaults to [0.0, 0.0, 0.0].</p></li>
+<li><p><strong>invert</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Should the geometry selection be inverted? Defaults to False.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
@@ -129,13 +131,14 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gorder.geometry.Sphere">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Sphere" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Sphere" title="Link to this definition"></a></dt>
 <dd><p>Calculate order parameters inside a sphere.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>radius</strong> (<em>float</em>) – Radius of the sphere [nm].</p></li>
 <li><p><strong>reference</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>,</em><em>str</em><em>]</em><em>]</em>) – Center of the sphere. Defaults to [0.0, 0.0, 0.0].</p></li>
+<li><p><strong>invert</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Should the geometry selection be inverted? Defaults to False.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
