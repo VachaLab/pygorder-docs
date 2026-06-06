@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Specifying membrane normal &mdash; gorder &#34;1.2.0&#34; documentation</title>
+  <title>Specifying membrane normal &mdash; gorder &#34;1.5.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=784e175d"></script>
+      <script src="_static/documentation_options.js?v=d55844b1"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -54,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="geometry.html">Order parameters for specific membrane region</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Specifying membrane normal</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gorder.membrane_normal.DynamicNormal"><code class="docutils literal notranslate"><span class="pre">DynamicNormal</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.membrane_normal.IndividualNormal"><code class="docutils literal notranslate"><span class="pre">IndividualNormal</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Accessing the results</a></li>
@@ -100,7 +101,7 @@ atom/bead per lipid molecule.</p></li>
 <li><p><strong>radius</strong> (<em>float</em>) – Radius of the sphere used to select nearby lipids for membrane normal
 estimation in nm. Recommended value is half the membrane thickness.
 Must be greater than 0. The default value is 2.0 (nm).</p></li>
-<li><p><strong>collect</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>bool</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=False</em>) – Determines whether dynamic membrane normals are saved and exported.
+<li><p><strong>collect</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>bool</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=False</em>) – Determines whether membrane normals are saved and exported.
 By default (<cite>False</cite>), normals are not saved.
 If <cite>True</cite>, normals are saved internally and accessible via the Python API, but not written to a file.
 If a string is provided, normals are saved and written to the specified output file.</p></li>
@@ -108,6 +109,27 @@ If a string is provided, normals are saved and written to the specified output f
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If <cite>radius</cite> is not positive.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gorder.membrane_normal.IndividualNormal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.membrane_normal.</span></span><span class="sig-name descname"><span class="pre">IndividualNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methyls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.membrane_normal.IndividualNormal" title="Link to this definition"></a></dt>
+<dd><p>Request molecule director to be used as local membrane normal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heads</strong> (<em>str</em>) – Selection query specifying reference atoms representing lipid headgroups
+(typically phosphorus atoms or phosphate beads). Must be exactly one
+atom/bead per lipid molecule.</p></li>
+<li><p><strong>methyls</strong> (<em>str</em>) – Selection query specifying reference atoms representing methyl groups at the ends of lipid tails.
+There should be exactly one such atom/bead per acyl chain (e.g., two for lipids with two acyl chains).</p></li>
+<li><p><strong>collect</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>bool</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=False</em>) – Determines whether membrane normals are saved and exported.
+By default (<cite>False</cite>), normals are not saved.
+If <cite>True</cite>, normals are saved internally and accessible via the Python API, but not written to a file.
+If a string is provided, normals are saved and written to the specified output file.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

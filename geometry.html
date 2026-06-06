@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order parameters for specific membrane region &mdash; gorder &#34;1.2.0&#34; documentation</title>
+  <title>Order parameters for specific membrane region &mdash; gorder &#34;1.5.0&#34; documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=784e175d"></script>
+      <script src="_static/documentation_options.js?v=d55844b1"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -52,8 +52,11 @@
 <li class="toctree-l1"><a class="reference internal" href="ordermap.html">Maps of order parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estimate_error.html">Estimating error</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Order parameters for specific membrane region</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.And"><code class="docutils literal notranslate"><span class="pre">And</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Cuboid"><code class="docutils literal notranslate"><span class="pre">Cuboid</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Cylinder"><code class="docutils literal notranslate"><span class="pre">Cylinder</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Not"><code class="docutils literal notranslate"><span class="pre">Not</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Or"><code class="docutils literal notranslate"><span class="pre">Or</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gorder.geometry.Sphere"><code class="docutils literal notranslate"><span class="pre">Sphere</span></code></a></li>
 </ul>
 </li>
@@ -90,6 +93,21 @@
   <section id="module-gorder.geometry">
 <span id="order-parameters-for-specific-membrane-region"></span><h1>Order parameters for specific membrane region<a class="headerlink" href="#module-gorder.geometry" title="Link to this heading"></a></h1>
 <dl class="py class">
+<dt class="sig sig-object py" id="gorder.geometry.And">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">And</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.And" title="Link to this definition"></a></dt>
+<dd><p>Combine two geometry selections with logical AND.
+Bonds will only be selected if they fulfill both selections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#gorder.geometry.Cuboid" title="gorder.geometry.Cuboid"><em>Cuboid</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Cylinder" title="gorder.geometry.Cylinder"><em>Cylinder</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Sphere" title="gorder.geometry.Sphere"><em>Sphere</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.And" title="gorder.geometry.And"><em>And</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Or" title="gorder.geometry.Or"><em>Or</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Not" title="gorder.geometry.Not"><em>Not</em></a><em>]</em>) – First geometry selection.</p></li>
+<li><p><strong>b</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#gorder.geometry.Cuboid" title="gorder.geometry.Cuboid"><em>Cuboid</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Cylinder" title="gorder.geometry.Cylinder"><em>Cylinder</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Sphere" title="gorder.geometry.Sphere"><em>Sphere</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.And" title="gorder.geometry.And"><em>And</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Or" title="gorder.geometry.Or"><em>Or</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Not" title="gorder.geometry.Not"><em>Not</em></a><em>]</em>) – Second geometry selection.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="gorder.geometry.Cuboid">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Cuboid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ydim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zdim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Ellipsis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Cuboid" title="Link to this definition"></a></dt>
 <dd><p>Calculate order parameters inside a cuboid.</p>
@@ -125,6 +143,34 @@
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="exceptions.html#gorder.exceptions.ConfigError" title="gorder.exceptions.ConfigError"><strong>ConfigError</strong></a> – If <cite>radius</cite> is not positive, <cite>span</cite> is invalid, or <cite>orientation</cite> is not recognized.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gorder.geometry.Not">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Not" title="Link to this definition"></a></dt>
+<dd><p>Invert a geometry selection with logical NOT.
+Bonds will be selected if they are not inside the given geometry.
+This is equivalent to the invert keyword.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#gorder.geometry.Cuboid" title="gorder.geometry.Cuboid"><em>Cuboid</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Cylinder" title="gorder.geometry.Cylinder"><em>Cylinder</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Sphere" title="gorder.geometry.Sphere"><em>Sphere</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.And" title="gorder.geometry.And"><em>And</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Or" title="gorder.geometry.Or"><em>Or</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Not" title="gorder.geometry.Not"><em>Not</em></a><em>]</em>) – Geometry selection to invert.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gorder.geometry.Or">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gorder.geometry.</span></span><span class="sig-name descname"><span class="pre">Or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gorder.geometry.Or" title="Link to this definition"></a></dt>
+<dd><p>Combine two geometry selections with logical OR.
+Bonds will be selected if they fulfill any of the two selections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#gorder.geometry.Cuboid" title="gorder.geometry.Cuboid"><em>Cuboid</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Cylinder" title="gorder.geometry.Cylinder"><em>Cylinder</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Sphere" title="gorder.geometry.Sphere"><em>Sphere</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.And" title="gorder.geometry.And"><em>And</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Or" title="gorder.geometry.Or"><em>Or</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Not" title="gorder.geometry.Not"><em>Not</em></a><em>]</em>) – First geometry selection.</p></li>
+<li><p><strong>b</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#gorder.geometry.Cuboid" title="gorder.geometry.Cuboid"><em>Cuboid</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Cylinder" title="gorder.geometry.Cylinder"><em>Cylinder</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Sphere" title="gorder.geometry.Sphere"><em>Sphere</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.And" title="gorder.geometry.And"><em>And</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Or" title="gorder.geometry.Or"><em>Or</em></a><em>, </em><a class="reference internal" href="#gorder.geometry.Not" title="gorder.geometry.Not"><em>Not</em></a><em>]</em>) – Second geometry selection.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
